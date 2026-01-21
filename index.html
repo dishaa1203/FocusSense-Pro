@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FocusSense Pro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+<script src="chart.min.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+  <h1>🧠 FocusSense Pro</h1>
+
+  <!-- Square Theme Toggle -->
+  <button id="themeToggle" class="theme-btn" title="Toggle theme">
+    🌙
+  </button>
+</header>
+
+<div class="container">
+
+  <!-- USER PROFILE -->
+  <div class="card">
+    <h2>User Profile</h2>
+
+    <label>Your Name</label>
+    <input id="username" placeholder="Enter your name">
+
+    <label>Preferred Work Type</label>
+    <select id="preferredWork">
+      <option>Study</option>
+      <option>Coding</option>
+      <option>Reading</option>
+      <option>Deep Work</option>
+    </select>
+
+    <label>Daily Focus Goal (hours)</label>
+    <input id="dailyGoal" type="number" min="1" max="12" placeholder="e.g. 4">
+    <small class="hint">Used to track daily progress & streaks</small>
+
+    <button id="profileBtn">Save Profile</button>
+    <p id="profileMsg"></p>
+  </div>
+
+  <!-- SESSION -->
+  <div class="card">
+    <h2>Focus Session</h2>
+
+    <label>Session Type</label>
+    <select id="sessionType">
+      <option>Study</option>
+      <option>Coding</option>
+      <option>Reading</option>
+      <option>Deep Work</option>
+    </select>
+
+    <div class="btn-group">
+      <button class="start" onclick="startSession()">Start</button>
+      <button class="stop" onclick="endSession()">End</button>
+    </div>
+
+    <div id="output"></div>
+  </div>
+
+  <!-- ANALYTICS -->
+  <div class="card">
+    <h2>Focus Analytics</h2>
+    <canvas id="focusChart"></canvas>
+  </div>
+
+  <!-- AI COACH -->
+  <div class="card coach" id="coach">
+    Start a few sessions to get focus insights 🧠
+  </div>
+
+  <button class="export" onclick="exportCSV()">Export Weekly Report</button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
